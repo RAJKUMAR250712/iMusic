@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaySong"
+    android:background="@drawable/background_img"> <!-- Your custom background image -->
+
+    <!-- Album Art (ImageView) -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:src="@drawable/logo"
+        android:scaleType="centerCrop"
+        android:contentDescription="Album Art"
+        android:elevation="4dp" />
+
+    <!-- Song Title (TextView) -->
+
+    <!-- SeekBar (Track Progress) -->
+
+    <!-- Controls Layout (Previous, Play/Pause, Next Buttons) -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Song Title"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="112dp"
+        android:progressDrawable="@drawable/seekbar_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <LinearLayout
+        android:id="@+id/controlLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar">
+
+        <!-- Previous Button -->
+        <ImageView
+            android:id="@+id/previous"
+            android:layout_width="70dp"
+            android:layout_height="68dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/circle_button"
+            android:contentDescription="Previous Song"
+            app:srcCompat="@drawable/previous" />
+
+        <!-- Play/Pause Button -->
+
+        <!-- Next Button -->
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="91dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/circle_button"
+            android:contentDescription="Play/Pause"
+            app:srcCompat="@drawable/pause" />
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/circle_button"
+            android:contentDescription="Next Song"
+            app:srcCompat="@drawable/next" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
